@@ -156,7 +156,7 @@ DefaultInstanceConfiguration()
     then
         if [ -d "${SCRIPT_DIRECTORY}/dist" -a \
              -f "${SCRIPT_DIRECTORY}/dist/opengrok.jar" -a \
-             -f "${SCRIPT_DIRECTORY}/dist/source.war" \
+             -f "${SCRIPT_DIRECTORY}/dist/${WEB_CONTEXT}.war" \
            ]
         then
             # Handle Developer Build Environments
@@ -213,7 +213,7 @@ DefaultInstanceConfiguration()
     # REQUIRED(deploy): Web Archive of OpenGrok (Distribution Location)
     #           (user building from source code will find this and other key
     #            files in the "dist" directory after the build is completed)
-    OPENGROK_DIST_WAR="${OPENGROK_DISTRIBUTION_BASE}/source.war"
+    OPENGROK_DIST_WAR="${OPENGROK_DISTRIBUTION_BASE}/${WEB_CONTEXT}.war"
 
     # REQUIRED: Exuberant CTags (http://ctags.sf.net)
     EXUBERANT_CTAGS="${EXUBERANT_CTAGS:-`FindExuberantCTags`}"
@@ -289,7 +289,7 @@ DefaultInstanceConfiguration()
 	    WEBAPP_CONFIG_ADDRESS=""
 	fi
     else
-        WEBAPP_CONFIG_ADDRESS="localhost:2424"
+        WEBAPP_CONFIG_ADDRESS="localhost:${OPENGROK_PORT}"
     fi
 
     if [ -n "${WEBAPP_CONFIG_ADDRESS}" ]; then
@@ -722,7 +722,7 @@ ValidateConfiguration()
 	    fi
 	else
             Warning "CHECK: derbyclient.jar needs to be in where the rest of " \
-	        "opengrok used jars are and in unpacked source.war in " \
+	        "opengrok used jars are and in unpacked ${WEB_CONTEXT}.war in " \
 		"WEB-INF/lib !"
 	fi
     fi
