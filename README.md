@@ -25,3 +25,18 @@ Make a opengrok instance with a independent web context path
   OPENGROK_CONFIGURATION=./run.conf $OPENGROK_DISTRIBUTION_BASE/bin/run.sh
   ```
 1. Check a web app's url on a browser
+
+## Install a OpenGrok instance from an OpenGrok's official released distribution
+1. Install latest JDK 1.8 and add its 'bin' to $PATH
+1. Install Tomcat 8.0.X 
+  1. Go to http://tomcat.apache.org/download-80.cgi
+  1. Download **8.0.x > Core > a distribution file( For examples .'tar.gz')**
+  1. Unpack a zipped file into a local and set it as **$TOMCAT_HOME**
+  1. Add **$TOMCAT_HOME/bin** to **$PATH**
+1. Download OpenGrok's latest stable release from https://github.com/OpenGrok/OpenGrok/releases
+1. Unpack a zipped file into a local and set it as **OPENGROK_DISTRIBUTION_BASE**
+1. Decide **OPENGROK_INSTANCE_BASE**
+1. Create **$OPENGROK_INSTANCE_BASE**, **$OPENGROK_INSTANCE_BASE/src**, **$OPENGROK_INSTANCE_BASE/data**
+1. Go to **$OPENGROK_DISTRIBUTION_BASE**
+
+1. 
