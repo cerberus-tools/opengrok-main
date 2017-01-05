@@ -1,17 +1,14 @@
 #!/bin/bash
+function realpath() {
+	python -c "import os; r = os.path.abspath('"$1"');print(r)"
+}
+
 if [ -z "${BUILD_LAYER}" ]; then
 	echo "ERROR: define BUILD_LAYER (git url )"
 	exit 1
 fi
 set -x
 BASEDIR=$(dirname "$0")
-if [ ! -f "$(which realpath)" ]; then
-	sudo apt-get install -y realpath 
-	if [ ! "$?" = "0" ]; then
-		echo "Error: Can't install realpath"
-		exit
-	fi
-fi
 BASEDIR=`realpath ${BASEDIR}`
 TOMCAT_HOME=`dirname $(dirname $(which catalina.sh))`
 if [ "${TOMCAT_HOME}" = "" ]; then
@@ -30,8 +27,9 @@ read  OPENGROK_PORT
 rm -rf WEB-INF
 export OPENGROK_TOMCAT_BASE="${TOMCAT_HOME}"
 export OPENGROK_WEBAPP_CONTEXT="/${WEB_CONTEXT}"
-export OPENGROK_DISTRIBUTIOIN_BASE=$(realpath ${BASEDIR}/..)
+export OPENGROK_DISTRIBUTIOIN_BASE=$(realpath ${BASEDIR}/../lib)
 export OPENGROK_INSTANCE_BASE="${BASEDIR}/../../opengrok-${WEB_CONTEXT}"
+export SCRIPT_DIRECTORY=$(realpath ${BASEDIR}/../)
 rm -rf $OPENGROK_INSTANCE_BASE
 mkdir -p ${OPENGROK_INSTANCE_BASE}/src
 mkdir -p ${OPENGROK_INSTANCE_BASE}/data
@@ -62,5 +60,7 @@ WEB_CONTEXT=${WEB_CONTEXT} OPENGROK_PORT=${OPENGROK_PORT} $BASEDIR/OpenGrok inde
 echo "export OPENGROK_DISTRIBUTIOIN_BASE=\"${OPENGROK_DISTRIBUTIOIN_BASE}\"" >> set_${WEB_CONTEXT}.sh
 echo "export OPENGROK_INSTANCE_BASE=\"${OPENGROK_INSTANCE_BASE}\"" >> set_${WEB_CONTEXT}.sh
 echo "export OPENGROK_PORT=\"${OPENGROK_PORT}\"" >> set_${WEB_CONTEXT}.sh
+echo "export SCRIPT_DIRECTORY=\"${SCRIPT_DIRECTORY}\"" >> set_${WEB_CONTEXT}.sh
+echo "export PATH=\"${SCRIPT_DIRECTORY}\"/bin:${PATH}\" ">> set_${WEB_CONTEXT}.sh
 echo "Done"
 set +x
