@@ -40,6 +40,7 @@ Make a opengrok instance with a independent web context path
 1. Create **$OPENGROK_INSTANCE_BASE**, **$OPENGROK_INSTANCE_BASE/src**, **$OPENGROK_INSTANCE_BASE/data**
 1. Go to **$SCRIPT_DIRECTORY**
 1. Extract a WEB-INF/web.xml from a :pencil2:**lib/source.war**
+
   ```
     Sunjoo:opengrok-0.12.1.6 sunjoo$ jar xf lib/source.war WEB-INF/web.xml
     Sunjoo:opengrok-0.12.1.6 sunjoo$ ls
@@ -58,15 +59,18 @@ Make a opengrok instance with a independent web context path
   * Old: ```WEBAPP_CONFIG_ADDRESS="localhost:2424"```
   * New: ```WEBAPP_CONFIG_ADDRESS="localhost:2011"```
 1. Update :pencil2:**WEB-INF/web.xml** in :pencil2:**lib/source.war**
+
   ```
     Sunjoo:opengrok-0.12.1.6 sunjoo$ jar uf lib/source.war WEB-INF/web.xml
   ```
 1. Make **$OPENGROK_INSTANCE_BASE/src** and **$OPENGROK_INSTANCE_BASE/data**
-1. Run a deploy 
+1. Run a deploy
+
   ```
     $SCRIPT_DIRECTORY/bin/OpenGrok deploy
   ```
 1. Unpack an archived sources under **$OPENGROK_INSTANCE_BASE/src**
+
   ```
     Sunjoo:opengrok-0.12.1.6 sunjoo$ pushd $OPENGROK_INSTANCE_BASE/src
     Sunjoo:src sunjoo$ cp -r ~/Downloads/apache-tomcat-8.0.33.tar .
@@ -74,6 +78,7 @@ Make a opengrok instance with a independent web context path
     Sunjoo:src sunjoo$ popd
   ```
 1. Run an indexingf job.
+
   ```
     $SCRIPT_DIRECTORY/bin/OpenGrok deploy
   ```
