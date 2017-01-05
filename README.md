@@ -39,14 +39,14 @@ Make a opengrok instance with a independent web context path
 1. Decide **OPENGROK_INSTANCE_BASE**
 1. Create **$OPENGROK_INSTANCE_BASE**, **$OPENGROK_INSTANCE_BASE/src**, **$OPENGROK_INSTANCE_BASE/data**
 1. Go to **$SCRIPT_DIRECTORY**
-1. Extract a WEB-INF/web.xml from a :pencil2:lib/source.war*** 
+1. Extract a WEB-INF/web.xml from a :pencil2:**lib/source.war**
   ```
-  Sunjoo:opengrok-0.12.1.6 sunjoo$ jar xf lib/source.war WEB-INF/web.xml
-  Sunjoo:opengrok-0.12.1.6 sunjoo$ ls
-  WEB-INF	bin	doc	lib	man
-  Sunjoo:opengrok-0.12.1.6 sunjoo$ ls WEB-INF/web.xml
-  WEB-INF/web.xml
-  Sunjoo:opengrok-0.12.1.6 sunjoo$
+    Sunjoo:opengrok-0.12.1.6 sunjoo$ jar xf lib/source.war WEB-INF/web.xml
+    Sunjoo:opengrok-0.12.1.6 sunjoo$ ls
+    WEB-INF	bin	doc	lib	man
+    Sunjoo:opengrok-0.12.1.6 sunjoo$ ls WEB-INF/web.xml
+    WEB-INF/web.xml
+    Sunjoo:opengrok-0.12.1.6 sunjoo$
   ```
 1. Change configuration file's directory name to $OPENGROK_INSTANCE_BASE/etc
   * Old: ```<param-value>/var/opengrok/etc/configuration.xml</param-value>```
@@ -59,21 +59,21 @@ Make a opengrok instance with a independent web context path
   * New: ```WEBAPP_CONFIG_ADDRESS="localhost:2011"```
 1. Update :pencil2:**WEB-INF/web.xml** in :pencil2:**lib/source.war**
   ```
-  Sunjoo:opengrok-0.12.1.6 sunjoo$ jar uf lib/source.war WEB-INF/web.xml
+    Sunjoo:opengrok-0.12.1.6 sunjoo$ jar uf lib/source.war WEB-INF/web.xml
   ```
 1. Make **$OPENGROK_INSTANCE_BASE/src** and **$OPENGROK_INSTANCE_BASE/data**
 1. Run a deploy 
   ```
-  $SCRIPT_DIRECTORY/bin/OpenGrok deploy
+    $SCRIPT_DIRECTORY/bin/OpenGrok deploy
   ```
 1. Unpack an archived sources under **$OPENGROK_INSTANCE_BASE/src**
   ```
-  Sunjoo:opengrok-0.12.1.6 sunjoo$ pushd $OPENGROK_INSTANCE_BASE/src
-  Sunjoo:src sunjoo$ cp -r ~/Downloads/apache-tomcat-8.0.33.tar .
-  Sunjoo:src sunjoo$ tar xvf apache-tomcat-8.0.33.tar
-  Sunjoo:src sunjoo$ popd
+    Sunjoo:opengrok-0.12.1.6 sunjoo$ pushd $OPENGROK_INSTANCE_BASE/src
+    Sunjoo:src sunjoo$ cp -r ~/Downloads/apache-tomcat-8.0.33.tar .
+    Sunjoo:src sunjoo$ tar xvf apache-tomcat-8.0.33.tar
+    Sunjoo:src sunjoo$ popd
   ```
 1. Run an indexingf job.
   ```
-  $SCRIPT_DIRECTORY/bin/OpenGrok deploy
+    $SCRIPT_DIRECTORY/bin/OpenGrok deploy
   ```
