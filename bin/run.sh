@@ -72,6 +72,7 @@ echo "export OPENGROK_PORT=\"${OPENGROK_PORT}\"" >> set_${WEB_CONTEXT}.sh
 echo "export SCRIPT_DIRECTORY=\"${SCRIPT_DIRECTORY}\"" >> set_${WEB_CONTEXT}.sh
 echo "export OPENGROK_WEBAPP_CONTEXT=\"${WEB_CONTEXT}\"" >> set_${WEB_CONTEXT}.sh
 echo "export PATH=\"${SCRIPT_DIRECTORY}/bin:${PATH}\" ">> set_${WEB_CONTEXT}.sh
+echo "alias update_projects=\"java -jar ${OPENGROK_DISTRIBUTIOIN_BASE}/opengrok.jar -W ${OPENGROK_INSTANCE_BASE}/etc/configuration -s ${OPENGROK_INSTANCE_BASE}/src -d ${OPENGROK_INSTANCE_BASE}/data -P -U localhost:${OPENGROK_PORT} -w /${WEB_CONTEXT} -C -a on \"" >> set_${WEB_CONTEXT}.sh
 cp set_${WEB_CONTEXT}.sh ${OPENGROK_INSTANCE_BASE}/
 
 # Print information
