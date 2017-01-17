@@ -66,6 +66,13 @@ sed -i -e  "s|    <param-value>/var/opengrok/etc/configuration.xml</param-value>
 sed -i -e "s|2424|${OPENGROK_PORT}|g" WEB-INF/web.xml
 jar uf ${TARGET_WAR} WEB-INF/web.xml
 
+echo "INFO: Change menu.jspf"
+jar xf ${TARGET_WAR}  menu.jspf
+sed -i -e "s|Math.min(6, |Math.min(20 |g" menu.jspf
+jar uf ${TARGET_WAR}  menu.jspf
+rm -rf menu.jspf*
+rm -rf WEB-INF*
+
 echo "INFO: Deploy a war file to Tomcat: ${TOMCAT_HOME}"
 cp ${TARGET_WAR} ${TOMCAT_HOME}/webapps/
 #WEB_CONTEXT=${WEB_CONTEXT} OPENGROK_PORT=${OPENGROK_PORT} $BASEDIR/OpenGrok deploy
