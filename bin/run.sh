@@ -37,13 +37,13 @@ echo "Web context: "
 read  WEB_CONTEXT
 echo "OpenGrok port: "
 read  OPENGROK_PORT
-export SCRIPT_DIRECTORY=$(realpath ${BASEDIR}/../)
+export SCRIPT_DIRECTORY=${BASEDIR}
 export OPENGROK_TOMCAT_BASE="${TOMCAT_HOME}"
 export OPENGROK_WEBAPP_CONTEXT="/${WEB_CONTEXT}"
 export OPENGROK_DISTRIBUTION_BASE=$(realpath ${BASEDIR}/../lib)
-export LOGGER_CONF_SOURCE="${SCRIPT_DIRECTORY}/doc/logging.properties"
+export LOGGER_CONF_SOURCE="${SCRIPT_DIRECTORY}/../doc/logging.properties"
 export OPENGROK_INSTANCE_BASE="$(realpath ${BASEDIR}/../../opengrok-${WEB_CONTEXT})"
-
+export OPENGROK_WEBAPP_CFGADDR="localhost:${OPENGROK_PORT}"
 if  [ -d "${OPENGROK_INSTANCE_BASE}" ]; then
     echo "INFO: Remove a previous ${OPENGROK_INSTANCE_BASE}"
     rm -rf $OPENGROK_INSTANCE_BASE
@@ -68,7 +68,7 @@ jar uf ${TARGET_WAR} WEB-INF/web.xml
 
 echo "INFO: Change menu.jspf"
 jar xf ${TARGET_WAR}  menu.jspf
-sed -i -e "s|Math.min(6, |Math.min(20 |g" menu.jspf
+sed -i -e "s|Math.min(6, |Math.min(20, |g" menu.jspf
 jar uf ${TARGET_WAR}  menu.jspf
 rm -rf menu.jspf*
 rm -rf WEB-INF*
@@ -95,7 +95,8 @@ echo "export OPENGROK_DISTRIBUTION_BASE=\"${OPENGROK_DISTRIBUTION_BASE}\"" > set
 echo "export OPENGROK_INSTANCE_BASE=\"${OPENGROK_INSTANCE_BASE}\"" >> set_${WEB_CONTEXT}.sh
 echo "export OPENGROK_PORT=\"${OPENGROK_PORT}\"" >> set_${WEB_CONTEXT}.sh
 echo "export SCRIPT_DIRECTORY=\"${SCRIPT_DIRECTORY}\"" >> set_${WEB_CONTEXT}.sh
-echo "export OPENGROK_WEBAPP_CONTEXT=\"${WEB_CONTEXT}\"" >> set_${WEB_CONTEXT}.sh
+echo "export OPENGROK_WEBAPP_CONTEXT=\"${OPENGROK_WEBAPP_CONTEXT}\"" >> set_${WEB_CONTEXT}.sh
+echo "export OPENGROK_WEBAPP_CFGADDR=\"${OPENGROK_WEBAPP_CFGADDR}\"" >> set_${WEB_CONTEXT}.sh
 echo "export PATH=\"${SCRIPT_DIRECTORY}/bin:${PATH}\" ">> set_${WEB_CONTEXT}.sh
 echo "alias update_projects=\"java -jar ${OPENGROK_DISTRIBUTION_BASE}/opengrok.jar -W ${OPENGROK_INSTANCE_BASE}/etc/configuration -s ${OPENGROK_INSTANCE_BASE}/src -d ${OPENGROK_INSTANCE_BASE}/data -P -U localhost:${OPENGROK_PORT} -w /${WEB_CONTEXT} -C -a on \"" >> set_${WEB_CONTEXT}.sh
 cp set_${WEB_CONTEXT}.sh ${OPENGROK_INSTANCE_BASE}/
