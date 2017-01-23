@@ -26,6 +26,8 @@ if [ "${TOMCAT_HOME}" = "" ]; then
 else
 	TOMCAT_HOME=`realpath ${TOMCAT_HOME}`
 fi
+echo "AD CONNECTIONPASSWORD"
+read CONNECTIONPASSWORD
 echo "Tomcat home: ${TOMCAT_HOME}"
 echo "Base dir: ${BASEDIR}"
 
@@ -61,11 +63,17 @@ fi
 
 echo "INFO: Change WEB-INF/web.xml in ${TARGET_WAR}"
 cp $BASEDIR/../lib/source.war ${TARGET_WAR}
-jar xf ${TARGET_WAR} WEB-INF/web.xml
+mkdir work
+cp -r web/* work
+pushd work
+#jar xf ${TARGET_WAR} WEB-INF/web.xml
 sed -i -e  "s|    <param-value>/var/opengrok/etc/configuration.xml</param-value>|    <param-value>${OPENGROK_INSTANCE_BASE}/etc/configuration.xml</param-value>|g" WEB-INF/web.xml
 sed -i -e "s|2424|${OPENGROK_PORT}|g" WEB-INF/web.xml
-jar uf ${TARGET_WAR} WEB-INF/web.xml
-
+sed -i -e "s|@CONNECTIONPASSWORD@|${CONNECTIONPASSWORD}|g" WEB-INF/web.xml
+sed -i -e "s|@CONNECTIONPASSWORD@|${CONNECTIONPASSWORD}|g" META-INF/context.xml
+#jar uf ${TARGET_WAR} WEB-INF/web.xml
+jar uf ${TARGET_WAR} *
+popd
 echo "INFO: Change menu.jspf"
 jar xf ${TARGET_WAR}  menu.jspf
 sed -i -e "s|Math.min(6, |Math.min(20, |g" menu.jspf

@@ -1,0 +1,33 @@
+<!-- External dependencies -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.js"></script>
+<script src="//aui-cdn.atlassian.com/aui-adg/6.0.5/js/aui.js"></script>
+<script src="//aui-cdn.atlassian.com/aui-adg/6.0.5/js/aui-experimental.js"></script>
+<script src="//aui-cdn.atlassian.com/aui-adg/6.0.5/js/aui-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//aui-cdn.atlassian.com/aui-adg/6.0.5/css/aui.css"/>
+<link rel="stylesheet" type="text/css" href="//aui-cdn.atlassian.com/aui-adg/6.0.5/css/aui-experimental.css"/>
+<!-- / External dependencies -->
+<table>
+    <tr>
+        <td colspan="2">Login to the TVL's OpenGrok System</td>
+    </tr>
+    <tr>
+        <td colspan="2">Use LGE AD account and password:</td>
+    </tr>
+</table>
+
+<form method="POST" action="j_security_check" class="aui">
+    <div class="field-group">
+        <label for="j_username">Name:</label>
+        <input class="text medium-field" type="text" name="j_username" id="j_username"/>
+    </div>
+    <div class="field-group">
+        <label for="j_password">Password:</label>
+        <input class="password medium-field" type="password" name="j_password" id="j_password"/>
+    </div>
+    <div class="button-container">
+        <div class="buttons">
+            <input class="button submit" type="submit" value="Go" />
+        </div>
+    </div>
+</form>
