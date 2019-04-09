@@ -250,7 +250,10 @@
         <web-resource-collection>
           <web-resource-name>opengrok.lge.com</web-resource-name>
           <description></description>
-          <url-pattern>/*</url-pattern>
+          <url-pattern>/xref/*</url-pattern>
+          <url-pattern>/raw/*</url-pattern>
+          <url-pattern>/download/*</url-pattern>
+          <url-pattern>/history/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
           <role-name>HE연구소(280331)_grp</role-name>
