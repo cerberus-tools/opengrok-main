@@ -99,6 +99,7 @@ WEB_CONTEXT=${WEB_CONTEXT} OPENGROK_PORT=${OPENGROK_PORT} java \
 -W ${OPENGROK_INSTANCE_BASE}/etc/configuration.xml \
 -s ${OPENGROK_INSTANCE_BASE}/src \
 -d ${OPENGROK_INSTANCE_BASE}/data \
+-U http://localhost:8080/$WEB_CONTEXT
 -P -H -S -G -c /usr/local/bin/ctags
 
 echo "INFO: Deploy a war file to Tomcat: ${TOMCAT_HOME}"
