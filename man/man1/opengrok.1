@@ -1,3 +1,5 @@
+Mar 21, 2019 3:28:04 PM org.opengrok.indexer.index.Indexer parseOptions
+INFO: Indexer options: [--man]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE REFENTRY PUBLIC "-//Sun Microsystems//DTD DocBook V3.0-Based SolBook Subset V2.0//EN">
 <?Pub Inc>
@@ -5,7 +7,7 @@
 <refmeta>
 <refentrytitle>opengrok</refentrytitle>
 <manvolnum>1</manvolnum>
-<refmiscinfo class="date">Sep 12, 2016</refmiscinfo>
+<refmiscinfo class="date">Mar 21, 2019</refmiscinfo>
 </refmeta>
 <refnamediv>
 <refname>opengrok</refname>
@@ -15,89 +17,93 @@
 <cmdsynopsis>
 <command>opengrok
 <optional><option>
-?</option></optional>
+-h, -?, --help <replaceable></replaceable></option></optional>
 <optional><option>
-A <replaceable>.ext|prefix.:analyzer</replaceable></option></optional>
+--detailed</option></optional>
 <optional><option>
-a <replaceable>on/off</replaceable></option></optional>
+-A, --analyzer <replaceable>(.ext|prefix.):(-|analyzer)</replaceable></option></optional>
 <optional><option>
-B <replaceable>url</replaceable></option></optional>
+-c, --ctags <replaceable>/path/to/ctags</replaceable></option></optional>
 <optional><option>
-C</option></optional>
+--checkIndexVersion</option></optional>
 <optional><option>
-c <replaceable>/path/to/ctags</replaceable></option></optional>
+-d, --dataRoot <replaceable>/path/to/data/root</replaceable></option></optional>
 <optional><option>
-D</option></optional>
+--depth <replaceable>number</replaceable></option></optional>
 <optional><option>
-d <replaceable>/path/to/data/root</replaceable></option></optional>
+-e, --economical <replaceable></replaceable></option></optional>
 <optional><option>
-e</option></optional>
+-G, --assignTags <replaceable></replaceable></option></optional>
 <optional><option>
-G</option></optional>
+-H, --history <replaceable></replaceable></option></optional>
 <optional><option>
-H</option></optional>
+-I, --include <replaceable>pattern</replaceable></option></optional>
 <optional><option>
-h <replaceable>/path/to/repository</replaceable></option></optional>
+-i, --ignore <replaceable>pattern</replaceable></option></optional>
 <optional><option>
-I <replaceable>pattern</replaceable></option></optional>
+-l, --lock <replaceable>on|off|simple|native</replaceable></option></optional>
 <optional><option>
-i <replaceable>pattern</replaceable></option></optional>
+--leadingWildCards <replaceable>on|off</replaceable></option></optional>
 <optional><option>
-j <replaceable>class</replaceable></option></optional>
+-m, --memory <replaceable>number</replaceable></option></optional>
 <optional><option>
-k <replaceable>/path/to/repository</replaceable></option></optional>
+--man</option></optional>
 <optional><option>
-K</option></optional>
+--mandoc <replaceable>/path/to/mandoc</replaceable></option></optional>
 <optional><option>
-L <replaceable>path</replaceable></option></optional>
+-n, --noIndex <replaceable></replaceable></option></optional>
 <optional><option>
-l <replaceable>on/off</replaceable></option></optional>
+-O, --optimize <replaceable>on|off</replaceable></option></optional>
 <optional><option>
-m <replaceable>number</replaceable></option></optional>
+-o, --ctagOpts <replaceable>path</replaceable></option></optional>
 <optional><option>
-N <replaceable>/path/to/symlink</replaceable></option></optional>
+-P, --projects <replaceable></replaceable></option></optional>
 <optional><option>
-n</option></optional>
+-p, --defaultProject <replaceable>/path/to/default/project</replaceable></option></optional>
 <optional><option>
-O <replaceable>on/off</replaceable></option></optional>
+--profiler</option></optional>
 <optional><option>
-o <replaceable>path</replaceable></option></optional>
+--progress</option></optional>
 <optional><option>
-P</option></optional>
+-Q, --quickScan <replaceable>on|off</replaceable></option></optional>
 <optional><option>
-p <replaceable>/path/to/default/project</replaceable></option></optional>
+-q, --quiet <replaceable></replaceable></option></optional>
 <optional><option>
-Q <replaceable>on/off</replaceable></option></optional>
+--repository <replaceable>repository</replaceable></option></optional>
 <optional><option>
-q</option></optional>
+-R <replaceable>/path/to/configuration</replaceable></option></optional>
 <optional><option>
-R <replaceable>/path/to/configuration</replaceable></option></optional>
+-r, --remote <replaceable>on|off|uionly|dirbased</replaceable></option></optional>
 <optional><option>
-r <replaceable>on/off</replaceable></option></optional>
+--renamedHistory <replaceable>on|off</replaceable></option></optional>
 <optional><option>
-S</option></optional>
+-S, --search <replaceable></replaceable></option></optional>
 <optional><option>
-s <replaceable>/path/to/source/root</replaceable></option></optional>
+-s, --source <replaceable>/path/to/source/root</replaceable></option></optional>
 <optional><option>
-T <replaceable>number</replaceable></option></optional>
+--style <replaceable>path</replaceable></option></optional>
 <optional><option>
-t <replaceable>number</replaceable></option></optional>
+--symlink <replaceable>/path/to/symlink</replaceable></option></optional>
 <optional><option>
-U <replaceable>host:port</replaceable></option></optional>
+-T, --threads <replaceable>number</replaceable></option></optional>
 <optional><option>
-u <replaceable>url</replaceable></option></optional>
+-t, --tabSize <replaceable>number</replaceable></option></optional>
 <optional><option>
-V</option></optional>
+-U, --uri <replaceable>protocol://webappURI:port/contextPath</replaceable></option></optional>
 <optional><option>
-v</option></optional>
+--updateConfig</option></optional>
 <optional><option>
-W <replaceable>/path/to/configuration</replaceable></option></optional>
+--userPage <replaceable>URL</replaceable></option></optional>
 <optional><option>
-w <replaceable>webapp-context</replaceable></option></optional>
+--userPageSuffix <replaceable>URL-suffix</replaceable></option></optional>
 <optional><option>
-X <replaceable>url:suffix</replaceable></option></optional>
+-V, --version <replaceable></replaceable></option></optional>
 <optional><option>
-z <replaceable>number</replaceable></option></optional>
+-v, --verbose <replaceable></replaceable></option></optional>
+<optional><option>
+--webappCtags <replaceable>on|off</replaceable></option></optional>
+<optional><option>
+-W, --writeConfig <replaceable>/path/to/configuration</replaceable></option></optional>
 </command>
 </cmdsynopsis>
 </refsynopsisdiv>
@@ -105,7 +111,7 @@ z <replaceable>number</replaceable></option></optional>
 <refsect1><title>DESCRIPTION</title>
 <para>
 OpenGrok is a fast and usable source code search and cross reference
-engine written in pure Java. It helps you search, cross-referenece
+engine written in pure Java. It helps you search, cross-reference
 and navigate your source tree. It can understand various program file
 formats and version control histories.
 </para>
@@ -113,48 +119,142 @@ formats and version control histories.
 
 <refsect1><title>OPTIONS</title>
 <variablelist termlength="medium">
-<varlistentry><term><option>?</option></term><listitem><para>Help</para></listitem></varlistentry>
-<varlistentry><term><option>A</option></term><listitem><para>Files with the named prefix/extension should be analyzed with the specified class</para></listitem></varlistentry>
-<varlistentry><term><option>a</option></term><listitem><para>Allow or disallow leading wildcards in a search</para></listitem></varlistentry>
-<varlistentry><term><option>B</option></term><listitem><para>Base URL of the user Information provider. Default: "http://www.myserver.org/viewProfile.jspa?username="</para></listitem></varlistentry>
-<varlistentry><term><option>C</option></term><listitem><para>Print per project percentage progress information(I/O extensive, since one read through dir structure is made before indexing, needs -v, otherwise it just goes to the log)</para></listitem></varlistentry>
-<varlistentry><term><option>c</option></term><listitem><para>Path to Exuberant Ctags from http://ctags.sf.net by default takes the Exuberant Ctags in PATH.</para></listitem></varlistentry>
-<varlistentry><term><option>D</option></term><listitem><para>Store history cache in a database (needs the JDBC driver in the classpath, typically derbyclient.jar or derby.jar)</para></listitem></varlistentry>
-<varlistentry><term><option>d</option></term><listitem><para>The directory where OpenGrok stores the generated data</para></listitem></varlistentry>
-<varlistentry><term><option>e</option></term><listitem><para>Economical - consumes less disk space. It does not generate hyper text cross reference files offline, but will do so on demand - which could be sightly slow.</para></listitem></varlistentry>
-<varlistentry><term><option>G</option></term><listitem><para>Assign commit tags to all entries in history for all repositories.</para></listitem></varlistentry>
-<varlistentry><term><option>H</option></term><listitem><para>Generate history cache for all repositories</para></listitem></varlistentry>
-<varlistentry><term><option>h</option></term><listitem><para>just generate history cache for the specified repos (absolute path from source root)</para></listitem></varlistentry>
-<varlistentry><term><option>I</option></term><listitem><para>Only files matching this pattern will be examined (supports wildcards, example: -I *.java -I *.c)</para></listitem></varlistentry>
-<varlistentry><term><option>i</option></term><listitem><para>Ignore the named files or directories (supports wildcards, example: -i *.so -i *.dll)</para></listitem></varlistentry>
-<varlistentry><term><option>j</option></term><listitem><para>Name of the JDBC driver class used by the history cache. Can use one of the shorthands "client" (org.apache.derby.jdbc.ClientDriver) or "embedded" (org.apache.derby.jdbc.EmbeddedDriver). Default: "client"</para></listitem></varlistentry>
-<varlistentry><term><option>k</option></term><listitem><para>Kill the history cache for the given repository and exit. Use '*' to delete the cache for all repositories.</para></listitem></varlistentry>
-<varlistentry><term><option>K</option></term><listitem><para>List all repository pathes and exit.</para></listitem></varlistentry>
-<varlistentry><term><option>L</option></term><listitem><para>Path to the subdirectory in the web-application containing the requested stylesheet. The following factory-defaults exist: "default", "offwhite" and "polished"</para></listitem></varlistentry>
-<varlistentry><term><option>l</option></term><listitem><para>Turn on/off locking of the Lucene database during index generation</para></listitem></varlistentry>
-<varlistentry><term><option>m</option></term><listitem><para>Amount of memory that may be used for buffering added documents and deletions before they are flushed to the Directory(default 16.0MB). Please increase JVM heap accordingly, too.</para></listitem></varlistentry>
-<varlistentry><term><option>N</option></term><listitem><para>Allow this symlink to be followed. Option may be repeated. By default only symlinks directly under source root directory are allowed.</para></listitem></varlistentry>
-<varlistentry><term><option>n</option></term><listitem><para>Do not generate indexes, but process all other command line options</para></listitem></varlistentry>
-<varlistentry><term><option>O</option></term><listitem><para>Turn on/off the optimization of the index database as part of the indexing step</para></listitem></varlistentry>
-<varlistentry><term><option>o</option></term><listitem><para>File with extra command line options for ctags</para></listitem></varlistentry>
-<varlistentry><term><option>P</option></term><listitem><para>Generate a project for each of the top-level directories in source root</para></listitem></varlistentry>
-<varlistentry><term><option>p</option></term><listitem><para>This is the path to the project that should be selected by default in the web application(when no other project set either in cookie or in parameter). You should strip off the source root.</para></listitem></varlistentry>
-<varlistentry><term><option>Q</option></term><listitem><para>Turn on/off quick context scan. By default only the first 1024k of a file is scanned, and a '[..all..]' link is inserted if the file is bigger. Activating this may slow the server down (Note: this is setting only affects the web application)</para></listitem></varlistentry>
-<varlistentry><term><option>q</option></term><listitem><para>Run as quietly as possible</para></listitem></varlistentry>
-<varlistentry><term><option>R</option></term><listitem><para>Read configuration from the specified file</para></listitem></varlistentry>
-<varlistentry><term><option>r</option></term><listitem><para>Turn on/off support for remote SCM systems</para></listitem></varlistentry>
-<varlistentry><term><option>S</option></term><listitem><para>Search for "external" source repositories and add them</para></listitem></varlistentry>
-<varlistentry><term><option>s</option></term><listitem><para>The root directory of the source tree</para></listitem></varlistentry>
-<varlistentry><term><option>T</option></term><listitem><para>The number of threads to use for index generation. By default the number of threads will be set to the number of available CPUs</para></listitem></varlistentry>
-<varlistentry><term><option>t</option></term><listitem><para>Default tabsize to use (number of spaces per tab character)</para></listitem></varlistentry>
-<varlistentry><term><option>U</option></term><listitem><para>Send the current configuration to the specified address (This is most likely the web-app configured with ConfigAddress)</para></listitem></varlistentry>
-<varlistentry><term><option>u</option></term><listitem><para>URL to the database that contains the history cache. Default: If -j specifies "embedded", "jdbc:derby:$DATA_ROOT/cachedb;create=true"; otherwise, "jdbc:derby://localhost/cachedb;create=true"</para></listitem></varlistentry>
-<varlistentry><term><option>V</option></term><listitem><para>Print version and quit</para></listitem></varlistentry>
-<varlistentry><term><option>v</option></term><listitem><para>Print progress information as we go along</para></listitem></varlistentry>
-<varlistentry><term><option>W</option></term><listitem><para>Write the current configuration to the specified file (so that the web application can use the same configuration</para></listitem></varlistentry>
-<varlistentry><term><option>w</option></term><listitem><para>Context of webapp. Default is /source. If you specify a different name, make sure to rename source.war to that name.</para></listitem></varlistentry>
-<varlistentry><term><option>X</option></term><listitem><para>URL Suffix for the user Information provider. Default: ""</para></listitem></varlistentry>
-<varlistentry><term><option>z</option></term><listitem><para>depth of scanning for repositories in directory structure relative to source root. Default is 3 .</para></listitem></varlistentry>
+<varlistentry><term><option>-h, -?, --help</option></term><listitem><para>Display this usage summary.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--detailed</option></term><listitem><para>Display additional help with -h,--help.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-A, --analyzer</option></term><listitem><para>Files with the named prefix/extension should be analyzed
+with the given analyzer, where 'analyzer' may be specified
+using a simple class name (RubyAnalyzer) or language name (C)
+(Note, analyzer specification is case sensitive)
+  Ex: -A .foo:CAnalyzer
+      will use the C analyzer for all files ending with .FOO
+  Ex: -A bar.:Perl
+      will use the Perl analyzer for all files starting
+      with "BAR" (no full-stop)
+  Ex: -A .c:-
+      will disable specialized analyzers for all files ending with .c
+</para></listitem></varlistentry>
+<varlistentry><term><option>-c, --ctags</option></term><listitem><para>Path to Universal Ctags
+By default takes the Universal Ctags in PATH.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--checkIndexVersion</option></term><listitem><para>Check if current Lucene version matches index version
+</para></listitem></varlistentry>
+<varlistentry><term><option>-d, --dataRoot</option></term><listitem><para>The directory where OpenGrok stores the generated data.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--depth</option></term><listitem><para>Scanning depth for repositories in directory structure relative to
+source root. Default is 3.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-e, --economical</option></term><listitem><para>Economical, consumes less disk space.
+It does not generate hyper text cross reference files offline,
+but will do so on demand, which could be sightly slow.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-G, --assignTags</option></term><listitem><para>Assign commit tags to all entries in history for all repositories.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-H, --history</option></term><listitem><para>Enable history.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-I, --include</option></term><listitem><para>Only files matching this pattern will be examined.
+(supports wildcards, example: -I *.java -I *.c)
+</para></listitem></varlistentry>
+<varlistentry><term><option>-i, --ignore</option></term><listitem><para>Ignore the named files (prefixed with 'f:')
+or directories (prefixed with 'd:').
+Supports wildcards (example: -i *.so -i *.dll)
+</para></listitem></varlistentry>
+<varlistentry><term><option>-l, --lock</option></term><listitem><para>Set OpenGrok/Lucene locking mode of the Lucene database
+during index generation. "on" is an alias for "simple".
+Default is off.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--leadingWildCards</option></term><listitem><para>Allow or disallow leading wildcards in a search.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-m, --memory</option></term><listitem><para>Amount of memory that may be used for buffering added documents and
+deletions before they are flushed to the directory (default 16.0MB).
+Please increase JVM heap accordingly, too.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--man</option></term><listitem><para>Generate OpenGrok XML manual page.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--mandoc</option></term><listitem><para>Path to mandoc(1) binary.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-n, --noIndex</option></term><listitem><para>Do not generate indexes and other data (such as history cache and xref files), but process all other command line options.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-O, --optimize</option></term><listitem><para>Turn on/off the optimization of the index database
+as part of the indexing step.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-o, --ctagOpts</option></term><listitem><para>File with extra command line options for ctags.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-P, --projects</option></term><listitem><para>Generate a project for each top-level directory in source root.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-p, --defaultProject</option></term><listitem><para>This is the path to the project that should be selected
+by default in the web application (when no other project
+set either in cookie or in parameter). May be used multiple
+times for several projects. Use "__all__" for all projects.
+You should strip off the source root.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--profiler</option></term><listitem><para>Pause to await profiler or debugger.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--progress</option></term><listitem><para>Print per project percentage progress information.
+(I/O extensive, since one read through directory structure is
+made before indexing, needs -v, otherwise it just goes to the log)
+</para></listitem></varlistentry>
+<varlistentry><term><option>-Q, --quickScan</option></term><listitem><para>Turn on/off quick context scan. By default, only the first
+1024k of a file is scanned, and a '[..all..]' link is inserted
+when the file is bigger. Activating this may slow the server down.
+(Note: this is setting only affects the web application)
+</para></listitem></varlistentry>
+<varlistentry><term><option>-q, --quiet</option></term><listitem><para>Run as quietly as possible.
+Sets logging level to WARNING.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--repository</option></term><listitem><para>Generate history for specific repository specified as relative path to source root. 
+Can be used multiple times. Assumes history is on.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-R</option></term><listitem><para>Read configuration from the specified file.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-r, --remote</option></term><listitem><para>Specify support for remote SCM systems.
+      on - allow retrieval for remote SCM systems.
+     off - ignore SCM for remote systems.
+  uionly - support remote SCM for user interface only.
+dirbased - allow retrieval during history index only for repositories
+           which allow getting history for directories.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--renamedHistory</option></term><listitem><para>Enable or disable generating history for renamed files.
+If set to on, makes history indexing slower for repositories
+with lots of renamed files.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-S, --search</option></term><listitem><para>Search for "external" source repositories and add them.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-s, --source</option></term><listitem><para>The root directory of the source tree.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--style</option></term><listitem><para>Path to the subdirectory in the web-application containing the
+requested stylesheet. The factory-setting is: "default".
+</para></listitem></varlistentry>
+<varlistentry><term><option>--symlink</option></term><listitem><para>Allow this symlink to be followed. Option may be repeated.
+By default only symlinks directly under source root directory
+are allowed.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-T, --threads</option></term><listitem><para>The number of threads to use for index generation.
+By default the number of threads will be set to the number
+of available CPUs.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-t, --tabSize</option></term><listitem><para>Default tab size to use (number of spaces per tab character).
+</para></listitem></varlistentry>
+<varlistentry><term><option>-U, --uri</option></term><listitem><para>Send the current configuration to the specified webappURI
+</para></listitem></varlistentry>
+<varlistentry><term><option>--updateConfig</option></term><listitem><para>Populate the webapp with bare configuration and exit.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--userPage</option></term><listitem><para>Base URL of the user Information provider.
+Example: "http://www.myserver.org/viewProfile.jspa?username=".
+Use "none" to disable link.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--userPageSuffix</option></term><listitem><para>URL Suffix for the user Information provider. Default: "".
+</para></listitem></varlistentry>
+<varlistentry><term><option>-V, --version</option></term><listitem><para>Print version and quit.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-v, --verbose</option></term><listitem><para>Set logging level to INFO.
+</para></listitem></varlistentry>
+<varlistentry><term><option>--webappCtags</option></term><listitem><para>Web application should run ctags when necessary. Default is off.
+</para></listitem></varlistentry>
+<varlistentry><term><option>-W, --writeConfig</option></term><listitem><para>Write the current configuration to the specified file
+(so that the web application can use the same configuration)
+</para></listitem></varlistentry>
 </variablelist>
 </refsect1>
 
@@ -188,4 +288,3 @@ Subversion, TeamWare, SCCS and Bazaar.
 </variablelist>
 </refsect1>
 </refentry>
-

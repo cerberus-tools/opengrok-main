@@ -23,8 +23,7 @@
   <!--
          <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
-  -->
-        <Realm className="org.apache.catalina.realm.JNDIRealm"
+         <Realm className="org.apache.catalina.realm.JNDIRealm"
             debug="99"
             connectionURL="ldap://156.147.162.251:3268"
             authentication="simple"
@@ -42,4 +41,24 @@
             userRoleName="cn"
             >
         </Realm>
+ -->
+ <!--
+        <Realm className="org.apache.catalina.realm.JNDIRealm"
+            connectionURL="ldap://156.147.162.251:3268"
+            authentication="simple"
+            referrals="follow"
+            connectionName="CN=addhost,CN=Users,DC=LGE,DC=NET"
+            connectionPassword="@CONNECTIONPASSWORD@"
+            userSearch="(sAMAccountName={0})"
+            userBase="dc=LGE,dc=NET"
+            userSubtree="true"
+            roleSearch="(member={0})"
+            roleName="cn"
+            roleSubtree="true"
+            roleNested="true"
+            roleBase="dc=LGE,dc=NET"
+            userRoleName="cn"
+            >
+        </Realm>
+        -->
 </Context>
