@@ -99,8 +99,9 @@ WEB_CONTEXT=${WEB_CONTEXT} OPENGROK_PORT=${OPENGROK_PORT} java \
 -W ${OPENGROK_INSTANCE_BASE}/etc/configuration.xml \
 -s ${OPENGROK_INSTANCE_BASE}/src \
 -d ${OPENGROK_INSTANCE_BASE}/data \
--U http://localhost:8080/$WEB_CONTEXT
+-U http://localhost:8080/$WEB_CONTEXT \
 -P -H -S -G -c /usr/local/bin/ctags
+
 
 echo "INFO: Deploy a war file to Tomcat: ${TOMCAT_HOME}"
 cp ${TARGET_WAR} ${TOMCAT_HOME}/webapps/
@@ -108,6 +109,9 @@ cp ${TARGET_WAR} ${TOMCAT_HOME}/webapps/
 
 echo "INFO: Wait for 1 seconds"
 sleep 1
+
+#curl --user ${TOMCAT_USER}:${TOMCAT_PASSWORD} http://localhost:8080/manager/text/reload?path=${OPENGROK_WEBAPP_CONTEXT}
+
 #WEB_CONTEXT=${WEB_CONTEXT} OPENGROK_PORT=${OPENGROK_PORT} $BASEDIR/OpenGrok index
 echo "export OPENGROK_DISTRIBUTION_BASE=\"${OPENGROK_DISTRIBUTION_BASE}\"" > set_${WEB_CONTEXT}.sh
 echo "export OPENGROK_INSTANCE_BASE=\"${OPENGROK_INSTANCE_BASE}\"" >> set_${WEB_CONTEXT}.sh

@@ -42,7 +42,6 @@
             >
         </Realm>
  -->
- <!--
         <Realm className="org.apache.catalina.realm.JNDIRealm"
             connectionURL="ldap://156.147.162.251:3268"
             authentication="simple"
@@ -60,5 +59,4 @@
             userRoleName="cn"
             >
         </Realm>
-        -->
 </Context>

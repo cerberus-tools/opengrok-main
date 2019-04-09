@@ -246,7 +246,6 @@
         <error-code>500</error-code>
         <location>/error</location>
     </error-page>
-    <!--
     <security-constraint>
         <web-resource-collection>
           <web-resource-name>opengrok.lge.com</web-resource-name>
@@ -260,7 +259,13 @@
           <role-name>LGEUS Open Innovation Technology Development Team(269714)_grp</role-name>
         </auth-constraint>
     </security-constraint>
-    -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+          <form-login-page>/login.html</form-login-page>
+          <form-error-page>/error.html</form-error-page>
+        </form-login-config>
+    </login-config>
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

@@ -13,6 +13,7 @@ java \
 -W ${OPENGROK_INSTANCE_BASE}/etc/configuration.xml \
 -P \
 -s ${OPENGROK_INSTANCE_BASE}/src \
--d ${OPENGROK_INSTANCE_BASE}/data \
--U http://localhost:8080${OPENGROK_WEBAPP_CONTEXT}
+-d ${OPENGROK_INSTANCE_BASE}/data
+#-U http://127.0.0.1:8080${OPENGROK_WEBAPP_CONTEXT}
+curl --user ${TOMCAT_USER}:${TOMCAT_PASSWORD} http://localhost:8080/manager/text/reload?path=${OPENGROK_WEBAPP_CONTEXT}
 set +x
